@@ -2,12 +2,14 @@ package main
 
 import (
 	"github.com/joelsalt/golang-algorithms/pkg/structure"
+	"github.com/joelsalt/golang-algorithms/pkg/algorithm"
 )
 
 func main() {
-	list := structure.NewSortedLinkedList()
+	list := structure.NewDoublyLinkedList()
 	list.Insert(1).
 		Insert(4).
+		Insert(1).
 		Insert(3).
 		Insert(2).
 		Insert(5).
@@ -17,5 +19,7 @@ func main() {
 		Insert(2).
 		Insert(10)
 
-	list.PrintData()
+	sortedList := algorithm.LinkedListInsertionSort(list)
+
+	sortedList.PrintData()
 }
